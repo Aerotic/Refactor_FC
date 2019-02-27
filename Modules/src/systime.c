@@ -53,10 +53,10 @@ void delay_ms(uint32_t ms)
         delay_us(1000);
 }
 
-void getTimeInterval(uint8_t item)
+float getTimeInterval(uint8_t item)
 {
     SysT[item][OLD] = SysT[item][NOW];                       //上一次的时间
-    SysT[item][NOW] = GetSysTime_us() / 1000000.0f;          //本次的时间
+    SysT[item][NOW] = getSysTime_us() / 1000000.0f;          //本次的时间
     SysT[item][NEW] = ((SysT[item][NOW] - SysT[item][OLD])); //时间间隔
     return SysT[item][NEW];
 }

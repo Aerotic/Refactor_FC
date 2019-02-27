@@ -11,5 +11,5 @@ void initSysTime(void);
 uint32_t getSysTime_us(void);
 void delay_us(uint32_t us);
 void delay_ms(uint32_t ms);
-void getTimeInterval(uint8_t item);
+float getTimeInterval(uint8_t item);
 #endif
