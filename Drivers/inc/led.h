@@ -25,4 +25,6 @@
 #define LED3_TOGGLE LED_GPIO_PORT0->ODR  ^= LED_GPIO_PIN3
 
 void cfgLED(void);
+void runLEDs(uint8_t times);
+void blinkLEDs(void);
 #endif

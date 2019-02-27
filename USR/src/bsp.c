@@ -41,4 +41,5 @@ void initModules(void)
 {
   // 设置USART2为串口打印口
   setSerialPrintPort(USART2);
+  initSysTime();
 }

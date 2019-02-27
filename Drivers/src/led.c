@@ -38,21 +38,33 @@ void runLEDs(uint8_t times){
         LED1_OFF;
         LED2_OFF;
         LED3_OFF;
-
+        delay_ms(200);
         LED0_OFF;
         LED1_ON;
         LED2_OFF;
         LED3_OFF;
-
+        delay_ms(200);
         LED0_OFF;
         LED1_OFF;
         LED2_ON;
         LED3_OFF;
-
+        delay_ms(200);
         LED0_OFF;
         LED1_OFF;
         LED2_OFF;
-        LED3_ON;        
+        LED3_ON;  
+        delay_ms(200);
+        LED0_OFF;
+        LED1_OFF;
+        LED2_OFF;
+        LED3_OFF;
     }
-    
+}
+
+void blinkLEDs(void){
+    LED0_TOGGLE;
+    LED1_TOGGLE;
+    LED2_TOGGLE;
+    LED3_TOGGLE;
+    delay_ms(200);
 }
