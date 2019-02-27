@@ -5,16 +5,16 @@
  * @copyright APPI SASU
  */
 
-
 #include "bsp.h"
 
 int main(void)
-{	
-  initPeriphals();
+{
+	initPeriphals();
 	initModules();
 	printf("HelloWorld!");
 	//USART_SendData(USART2,0xaa);
-	
-	while(1){
+
+	while (1)
+	{
 	}
 }

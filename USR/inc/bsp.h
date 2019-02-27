@@ -78,6 +78,12 @@
 #define LED_GPIO_PIN2 GPIO_Pin_13 //PC13
 #define LED_GPIO_PIN3 GPIO_Pin_15 //PC15
 
+//SoftI2C settings
+#define SOFTI2C_RCC_AHB	      RCC_AHB1Periph_GPIOB
+#define SOFTI2C_GPIO_PORT      GPIOB
+#define SOFTI2C_PIN_SCL   GPIO_Pin_13
+#define SOFTI2C_PIN_SDA   GPIO_Pin_12
+
 // SystemTime settings
 #define TIMEINTERVAL_DBUS       0
 #define TIMEINTERVAL_TASK500HZ  1
@@ -93,6 +99,7 @@
 #include "usart3.h"
 #include "led.h"
 #include "systick.h"
+#include "softi2c.h"
 
 /******Modules*******/
 #include "serialprint.h"
