@@ -78,6 +78,15 @@
 #define LED_GPIO_PIN2 GPIO_Pin_13 //PC13
 #define LED_GPIO_PIN3 GPIO_Pin_15 //PC15
 
+// SystemTime settings
+#define TIMEINTERVAL_DBUS       0
+#define TIMEINTERVAL_TASK500HZ  1
+#define TIMEINTERVAL_TASK200HZ  2
+#define TIMEINTERVAL_TASK100HZ  3
+#define TIMEINTERVAL_TASK50HZ   4
+#define TIMEINTERVAL_TASK20HZ   5
+#define TIME_ITEM_NUM           6
+
 /******Drivers*******/
 #include "usart1.h"
 #include "usart2.h"
