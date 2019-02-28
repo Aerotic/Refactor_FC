@@ -14,3 +14,5 @@ Objects/NEU_Coreboard_NEU_Coreboard.dep
 Objects/*.o
 Objects/*.crf
 Objects/*.d
+JLinkLog.txt
+JLinkSettings.ini
