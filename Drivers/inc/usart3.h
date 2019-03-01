@@ -12,6 +12,6 @@
 
 #include "bsp.h"
 extern uint8_t USART3_Rx_Buffer[USART3RXBUF_SIZE];
-void cfgUSART3(void);
+void USART3_Init(void);
 void DMA1_Stream1_IRQHandler(void);
 #endif

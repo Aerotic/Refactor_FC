@@ -1,7 +1,7 @@
 /**
- * @author Firstname Lastname <firstname.lastname@example.com>
+ * @author Aero <neuhutao@gmail.com>
  * @file Description
- * @desc Created on 2019-02-25 9:10:49 pm
+ * @desc Created on 2019-02-28 6:07:06 pm
  * @copyright APPI SASU
  */
 #ifndef _BSP_H_
@@ -92,6 +92,37 @@
 #define TIMEINTERVAL_TASK50HZ   4
 #define TIMEINTERVAL_TASK20HZ   5
 #define TIME_ITEM_NUM           6
+
+// SPI1 settings
+#define SPI1_RCC_APB2   RCC_APB2Periph_SPI1
+#define SPI1_RCC_AHB1   RCC_AHB1Periph_GPIOA | RCC_AHB1Periph_GPIOB
+#define SPI1_GPIO_PORT0 GPIOA
+#define SPI1_GPIO_PORT1 GPIOB
+#define SPI1_PIN_MOSI   GPIO_Pin_7  //PA7
+#define SPI1_SRC_MOSI   GPIO_PinSource7
+#define SPI1_PIN_MISO   GPIO_Pin_4  //PB4
+#define SPI1_SRC_MISO   GPIO_PinSource4
+#define SPI1_PIN_SCK    GPIO_Pin_5  //PA5
+#define SPI1_SRC_SCK    GPIO_PinSource5
+#define SPI1_PIN_NSS    GPIO_Pin_4  //PA4
+#define SPI1_DIRECTION  SPI_Direction_2Lines_FullDuplex
+#define SPI1_MODE       SPI_Mode_Master
+#define SPI1_DATASIZE   SPI_DataSize_8b
+#define SPI1_CPOL       SPI_CPOL_High
+#define SPI1_CPHA       SPI_CPHA_2Edge
+#define SPI1_NSS        SPI_NSS_Soft
+#define SPI1_BAUDRATEPS SPI_BaudRatePrescaler_4
+#define SPI1_FIRSTBIT   SPI_FirstBit_MSB
+#define SPI1_CRCPOLY    7
+
+// W25Q128 settings
+#define W25Q128_RCC_AHB1    RCC_AHB1Periph_GPIOA
+#define W25Q128_GPIO_PORT   GPIOA
+#define W25Q128_PIN_NWP     GPIO_Pin_1 //PA1
+#define W25Q128_PIN_NRST    GPIO_Pin_0 //PA0
+
+
+
 
 /******Drivers*******/
 #include "usart1.h"

@@ -8,7 +8,7 @@
 uint8_t USART2_Rx_Buffer[USART2RXBUF_SIZE];
 uint8_t USART2_Tx_Buffer[USART2RXBUF_SIZE];
 
-void cfgUSART2(void)
+void USART2_Init(void)
 {
 	USART_InitTypeDef USART_InitStructure;
 	GPIO_InitTypeDef GPIO_InitStructure;
@@ -102,12 +102,12 @@ void cfgUSART2(void)
 
 }
 
-void writeByteUSART2(uint8_t txbyte)
+void USART2_WriteByte(uint8_t txbyte)
 {
 	while (USART_GetFlagStatus(USART2, USART_FLAG_TC) == RESET);
 	USART_SendData(USART2, txbyte);
 }
-void startUSART2TxDMA(void)
+void USART2_StartTxDMA(void)
 {
 	DMA_SetCurrDataCounter(DMA1_Stream6, USART2TXBUF_SIZE);
 	DMA_Cmd(DMA1_Stream6, ENABLE);
@@ -131,7 +131,7 @@ void USART2_IRQHandler(void)
 	}
 }
 
-void DMA1s_Stream6_IRQHandler(void)
+void DMA1_Stream6_IRQHandler(void)
 {
 	if (DMA_GetITStatus(DMA1_Stream6, DMA_IT_TCIF6))
 	{

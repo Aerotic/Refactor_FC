@@ -12,6 +12,6 @@ extern volatile uint32_t SysTickUptime;
 #define TICK_PER_SECOND 1000 
 #define TICK_US	(1000000/TICK_PER_SECOND)
 
-void cfgSysTick(void);
+void SysTick_Init(void);
 void SysTick_Handler(void);
 #endif

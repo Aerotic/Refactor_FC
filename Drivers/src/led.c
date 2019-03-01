@@ -6,7 +6,7 @@
  */
 #include "led.h"
 
-void cfgLED(void)
+void LED_Init(void)
 {
     GPIO_InitTypeDef GPIO_InitStructure;
     
@@ -28,7 +28,6 @@ void cfgLED(void)
     LED1_OFF;
     LED2_OFF;
     LED3_OFF;
-
 }
 void runLEDs(uint8_t times){
     uint8_t i;

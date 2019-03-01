@@ -6,7 +6,7 @@
  */
 #include "usart3.h"
 uint8_t USART3_Rx_Buffer[USART3RXBUF_SIZE];
-void cfgUSART3(void){
+void USART3_Init(void){
 	USART_InitTypeDef USART_InitStructure;
 	GPIO_InitTypeDef GPIO_InitStructure;
 	DMA_InitTypeDef DMA_InitStructure;

@@ -9,9 +9,10 @@
 #include "bsp.h"
 
 
-void cfgUSART2(void);
-void writeByteUSART2(uint8_t b);
-void DMA1_Stream5_IRQHandler(void);
+void USART2_Init(void);
+void USART2_WriteByte(uint8_t b);
+void DMA1_Stream6_IRQHandler(void);
 void USART2_IRQHandler(void);//USART2中断
+void USART2_StartTxDMA(void);
 #endif 
 

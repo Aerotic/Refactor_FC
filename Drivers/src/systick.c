@@ -8,7 +8,7 @@
 volatile uint32_t SysTickUptime=0;
 
 
-void cfgSysTick(){
+void SysTick_Init(){
     RCC_ClocksTypeDef RCC_ClocksInitStructure;
     uint32_t cnts;
 

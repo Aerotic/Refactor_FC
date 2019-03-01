@@ -17,24 +17,24 @@ void initPeriphals(void)
   // 波特率512k 停止位1 无校验 无流控 全双工 且DMA buff长为14
   // 用以与Android通信
   // 且用于串口打印
-  cfgUSART1();
+  USART1_Init();
 
   // USART2 settings
   // 波特率115.2k 停止位1 无校验 无流控 全双工 且DMA buff长为14
   // 用以备用
-  cfgUSART2();
+  USART2_Init();
 
   // USART3 settings
   // 波特率100k 停止位2 偶校验 无流控 仅接收数据 且DMA buff长为25
   // 用以配合使用s.Bus通信协议
-  cfgUSART3();
+  USART3_Init();
 
   // LED settings
-  cfgLED();
+  LED_Init();
 
   // SysTick settings
   // 用以系统计时
-  cfgSysTick();
+  SysTick_Init();
 
   // Soft I2C settings
   initSoftI2C();

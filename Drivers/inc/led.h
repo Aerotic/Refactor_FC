@@ -24,7 +24,7 @@
 #define LED3_ON     LED_GPIO_PORT0->BSRRH = LED_GPIO_PIN3
 #define LED3_TOGGLE LED_GPIO_PORT0->ODR  ^= LED_GPIO_PIN3
 
-void cfgLED(void);
+void LED_Config(void);
 void runLEDs(uint8_t times);
 void blinkLEDs(void);
 #endif

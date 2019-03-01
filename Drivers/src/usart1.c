@@ -9,7 +9,7 @@
 uint8_t USART1_Rx_Buffer[USART1RXBUF_SIZE];
 uint8_t USART1_Tx_Buffer[USART1RXBUF_SIZE];
 
-void cfgUSART1(void){
+void USART1_Init(void){
 	USART_InitTypeDef USART_InitStructure;
 	GPIO_InitTypeDef GPIO_InitStructure;
 	DMA_InitTypeDef DMA_InitStructure;
