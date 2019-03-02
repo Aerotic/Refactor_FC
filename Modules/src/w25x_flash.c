@@ -12,30 +12,35 @@ void W25x_FLASH_Init(void)
 {
 }
 
-uint8_t W25x_FLASH_Check(void){
+/**
+  * @brief  通过读取ID命令检测并识别flash芯片
+  * @param  none.
+  * @retval 芯片容量-1 （单位：M bit)
+  */
+uint8_t W25x_FLASH_Check(void)
+{
     uint32_t device_id;
     uint8_t device_flag;
     device_id = W25x_FLASH_ReadID();
     switch (device_id)
     {
-        case W25x_FLASH_ID_X16:
-            device_flag = 16;
-            break;
-        case W25x_FLASH_ID_Q16:
-            device_flag = 15;
-            break;
-        case W25x_FLASH_ID_Q64:
-            device_flag = 63;
-            break;
-        case W25x_FLASH_ID_Q128:
-            device_flag = 127;
-            break;
-        default:
-            device_flag = 0;
-            break;
+    case W25x_FLASH_ID_X16:
+        device_flag = 16;
+        break;
+    case W25x_FLASH_ID_Q16:
+        device_flag = 15;
+        break;
+    case W25x_FLASH_ID_Q64:
+        device_flag = 63;
+        break;
+    case W25x_FLASH_ID_Q128:
+        device_flag = 127;
+        break;
+    default:
+        device_flag = 0;
+        break;
     }
     return device_flag;
-
 }
 
 /**
