@@ -38,6 +38,8 @@ void initPeriphals(void)
 
   // Soft I2C settings
   initSoftI2C();
+
+  SPI1_Init();
 }
 
 void initModules(void)

@@ -104,7 +104,7 @@
 #define SPI1_SRC_MISO   GPIO_PinSource4
 #define SPI1_PIN_SCK    GPIO_Pin_5  //PA5
 #define SPI1_SRC_SCK    GPIO_PinSource5
-#define SPI1_PIN_NSS    GPIO_Pin_4  //PA4
+#define SPI1_PIN_NSS    GPIO_Pin_4  //PA4 用以片选W25Q128
 #define SPI1_DIRECTION  SPI_Direction_2Lines_FullDuplex
 #define SPI1_MODE       SPI_Mode_Master
 #define SPI1_DATASIZE   SPI_DataSize_8b
@@ -114,13 +114,16 @@
 #define SPI1_BAUDRATEPS SPI_BaudRatePrescaler_4
 #define SPI1_FIRSTBIT   SPI_FirstBit_MSB
 #define SPI1_CRCPOLY    7
+#define SPI1_NSS_SELECT_W25FLASH    SPI1_GPIO_PORT0->BSRRH = SPI1_PIN_NSS
+#define SPI1_NSS_notSELECT_W25FLASH     SPI1_GPIO_PORT0->BSRRL = SPI1_PIN_NSS
 
-// W25Q128 settings
-#define W25Q128_RCC_AHB1    RCC_AHB1Periph_GPIOA
-#define W25Q128_GPIO_PORT   GPIOA
-#define W25Q128_PIN_NWP     GPIO_Pin_1 //PA1
-#define W25Q128_PIN_NRST    GPIO_Pin_0 //PA0
 
+// W25x_flash settings
+#define W25x_RCC_AHB1       RCC_AHB1Periph_GPIOA
+#define W25x_GPIO_PORT      GPIOA
+#define W25x_PIN_NWP        GPIO_Pin_1 //PA1
+#define W25x_PIN_NRST       GPIO_Pin_0 //PA0
+#define W25x_FLASH_SPI      SPI1
 
 
 
@@ -131,10 +134,13 @@
 #include "led.h"
 #include "systick.h"
 #include "softi2c.h"
+#include "spi1.h"
 
 /******Modules*******/
 #include "serialprint.h"
 #include "systime.h"
+#include "w25x_flash.h"
+
 
 void initPeriphals(void);
 void initModules(void);

@@ -14,6 +14,9 @@ void SPI1_Init(void)
 	RCC_AHB1PeriphClockCmd(SPI1_RCC_AHB1, ENABLE);
 	RCC_APB2PeriphClockCmd(SPI1_RCC_APB2, ENABLE);
 
+	GPIO_PinAFConfig(SPI1_GPIO_PORT0, SPI1_SRC_SCK, GPIO_AF_SPI1);	//PA5	SPI1  SCLK
+	GPIO_PinAFConfig(SPI1_GPIO_PORT1, SPI1_SRC_MISO, GPIO_AF_SPI1); //PB4	SPI1  MISO
+	GPIO_PinAFConfig(SPI1_GPIO_PORT0, SPI1_SRC_MOSI, GPIO_AF_SPI1); //PA7	SPI1  MOSI
 	GPIO_InitStructure.GPIO_Pin = SPI1_PIN_SCK | SPI1_PIN_MOSI;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
 	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
@@ -35,9 +38,9 @@ void SPI1_Init(void)
 	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
 	GPIO_Init(SPI1_GPIO_PORT0, &GPIO_InitStructure);
 
-	GPIO_PinAFConfig(SPI1_GPIO_PORT0, SPI1_PIN_SCK, GPIO_AF_SPI1);	//PA5	SPI1  CLK
-	GPIO_PinAFConfig(SPI1_GPIO_PORT1, SPI1_SRC_MISO, GPIO_AF_SPI1); //PB4	SPI1  MISO
-	GPIO_PinAFConfig(SPI1_GPIO_PORT0, SPI1_SRC_MOSI, GPIO_AF_SPI1); //PA7	SPI1  MOSI
+	SPI1_NSS_notSELECT_W25FLASH;
+
+
 
 	RCC_APB2PeriphResetCmd(RCC_APB2Periph_SPI1, ENABLE);	// 复位SPI1
 	RCC_APB2PeriphResetCmd(RCC_APB2Periph_SPI1, DISABLE); // 停止复位SPI1
@@ -81,5 +84,5 @@ uint8_t SPI1_ReadWriteByte(uint8_t txbyte)
 	{
 	} //等待接收完一个byte
 
-	return SPI_I2S_ReceiveData(SPI1); //·µ»ØÍ¨¹ýSPIx×î½ü½ÓÊÕµÄÊý¾Ý
+	return SPI_I2S_ReceiveData(SPI1); 
 }

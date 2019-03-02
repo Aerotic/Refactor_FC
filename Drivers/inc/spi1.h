@@ -8,7 +8,7 @@
 #define _SPI1_H_
 #include "bsp.h"
 
-void SPI1_Config(void);// SPI1配置
+void SPI1_Init(void);// SPI1配置
 uint8_t SPI1_ReadWriteByte(uint8_t txbyte);//SPI1 读写一个byte
 void SPI1_SetSpeed(uint8_t spi_brps);
 
