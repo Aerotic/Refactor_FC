@@ -1,3 +1,9 @@
+/**
+ * @author Aero <neuhutao@gmail.com>
+ * @file Description
+ * @desc Created on 2019-03-02 7:08:04 pm
+ * @copyright APPI SASU
+ */
 #include "mymath.h"
 
 float FAST_ATAN_TABLE[257] = 
