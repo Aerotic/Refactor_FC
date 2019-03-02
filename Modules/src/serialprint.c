@@ -6,7 +6,6 @@
  */
 #include "serialprint.h"
 
-#define SERIALPRINT_PORT USART2
 USART_TypeDef* SerialPrintPort;
 #if 1
 #pragma import(__use_no_semihosting)                             
